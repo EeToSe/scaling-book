@@ -37,7 +37,7 @@ bundle exec jekyll serve
 
 Once you have run jekyll serve successfully, the book will be available at `http://127.0.0.1:4000/scaling-book`.
 
-To deploy to the GitHub Pages site (with repo write permision), run `sh bin/deploy`, which will take about 3 minutes to run.
+To deploy to the GitHub Pages site (with repo write permission), run `sh bin/deploy`, which will take about 3 minutes to run.
 
 ### Contributing and Contact
 

@@ -160,7 +160,7 @@ The total here is about 21.6TB. You notice that gradient checkpointing strongly 
 
 {% details Click here for the answer, once you've thought about it! %}
 
-**Answer**: Our total memory is still about 21.6TB, so per-chip we'll be using about 2.4GB per chip, which is bascially nothing. If we did much more aggressive checkpointing, e.g. 12 checkpoints per layer, we'd still only be at 8GB per chip. We're nowhere near being memory bound during training at these scales.
+**Answer**: Our total memory is still about 21.6TB, so per-chip we'll be using about 2.4GB per chip, which is basically nothing. If we did much more aggressive checkpointing, e.g. 12 checkpoints per layer, we'd still only be at 8GB per chip. We're nowhere near being memory bound during training at these scales.
 
 {% enddetails %}
 

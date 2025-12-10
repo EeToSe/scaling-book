@@ -688,7 +688,7 @@ For normal autoregressive sampling the token/s is the same as the step time. We 
 
 {% include figure.liquid path="assets/img/spec-sampling3.png" class="img-fluid" caption="<b>Figure:</b> this figure shows the per-step latency and speculation success rate for Chinchilla (a 70B model from DeepMind) with a 4B parameter drafter (small model). For XSum (a natural language dataset), the ideal amount of speculation is about 3-4 tokens ahead, while HumanEval (a coding dataset) is more predictable and sees wins from more aggressive speculation." %}
 
-**How does this work for non-greedy decoding?** This is a bit more complicated, but essentially boils down to a Metropolis-Hastings inspired algorithm where have $$P_{\text{draft model}}(\text{chosen token})$$ and $$P_{\text{target model}}(\text{chosen token})$$ derived from the logits, and reject the chosen token probabilistically if the ratio of these probabilities is smaller than some threshold.
+**How does this work for non-greedy decoding?** This is a bit more complicated, but essentially boils down to a Metropolis-Hastings inspired algorithm where we have $$P_{\text{draft model}}(\text{chosen token})$$ and $$P_{\text{target model}}(\text{chosen token})$$ derived from the logits, and reject the chosen token probabilistically if the ratio of these probabilities is smaller than some threshold.
 
 These [two](https://arxiv.org/abs/2211.17192) [papers](https://arxiv.org/abs/2302.01318) derived this concurrently and have good examples of how this works in practice.
 
