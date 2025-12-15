@@ -10,27 +10,29 @@ The website uses a Distill-style Jekyll theme created by https://github.com/alsh
 
 ### Running Locally
 
-To build this repo locally, you will need Ruby, ImageMagick, and Jupyter installed, which for MacOS can be installed with Homebrew using
+To build this repo locally, you will need Ruby from rbenv, ImageMagick, and Jupyter installed.
 
 ```
-brew install imagemagick ruby
+brew install rbenv ruby-build imagemagick
 pip install jupyter
-```
 
-After this is installed, you should make sure the correct version of Ruby is found in PATH. You should have at least ruby 3.4.5 installed. You may need to add
+cat << 'EOF' >> ~/.zshrc
+# rbenv configuration
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init - zsh)"
+EOF
+source ~/.zshrc
 
-```
-if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
-```
-
-to your .bashrc to get the right version. After this, you should be able to clone and run the repository.
-
-```
 git clone https://github.com/jax-ml/scaling-book.git
 cd scaling-book
+
+rbenv install 3.3.10
+rbenv local 3.3.10
+rbenv rehash
+
+gem install bundler
+bundle config set --local path vendor/bundle
 bundle install
 bundle exec jekyll serve
 ```
